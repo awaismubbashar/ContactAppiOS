@@ -11,7 +11,10 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
+    let name: [String] = ["Ali", "Asghar", "Awais", "Mubbashar", "Ameen"]
+    let age: [Int] = [22, 33, 33, 11, 21]
+    let designation: [String] = ["Teacher", "Engineer", "Wela", "Teacher", "Teacher"]
+    
     let cellReuseIdentifier = "ContactTableViewCell"
     
     override func viewDidLoad() {
@@ -27,7 +30,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.animals.count
+        return self.name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,8 +38,10 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? ContactTableViewCell
 //        cell.textLabel?.text = self.animals[indexPath.row]
         
-        cell?.nameContact.text = "Gujjar"
-        
+        cell?.nameContact.text = self.name[indexPath.row]
+        cell?.ageContact.text = " \(self.age[indexPath.item]) "
+        cell?.designationContact.text = self.designation[indexPath.row]
+
         return cell ?? UITableViewCell()
     }
     
