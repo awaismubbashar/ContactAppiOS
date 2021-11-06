@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -146,6 +147,118 @@
             </objects>
             <point key="canvasLocation" x="1716" y="80"/>
         </scene>
+        <!--Add Contact-->
+        <scene sceneID="nRb-aG-8aY">
+            <objects>
+                <viewController storyboardIdentifier="AddContactVCViewController" title="Add Contact" id="4x6-fY-kxS" customClass="AddContactVCViewController" customModule="Person" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hb5-Zx-0V1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-Et-oi3">
+                                <rect key="frame" x="20" y="158" width="99" height="42"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Name">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="20"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFv-AA-UJm">
+                                <rect key="frame" x="20" y="240" width="99" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Age">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="20"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-bt-eHU">
+                                <rect key="frame" x="20" y="312" width="99" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="l7j-Qr-WTn"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Designation">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="20"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-kS-7QB">
+                                <rect key="frame" x="129" y="162" width="275" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-NZ-C0Z">
+                                <rect key="frame" x="129" y="236" width="275" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-W1-lsY">
+                                <rect key="frame" x="127" y="316" width="277" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMr-cM-Xkj">
+                                <rect key="frame" x="10" y="399" width="394" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Add Contact">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addContact:" destination="4x6-fY-kxS" eventType="touchUpInside" id="rq9-th-79h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D6w-b7-JKG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2fh-bt-eHU" firstAttribute="top" secondItem="rFv-AA-UJm" secondAttribute="bottom" constant="46" id="03H-M1-q0T"/>
+                            <constraint firstItem="rFv-AA-UJm" firstAttribute="leading" secondItem="D6w-b7-JKG" secondAttribute="leading" constant="20" id="0kd-P4-YBe"/>
+                            <constraint firstItem="PSM-W1-lsY" firstAttribute="top" secondItem="OaT-NZ-C0Z" secondAttribute="bottom" constant="40" id="6BX-Tm-6Jt"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="trailing" secondItem="PSM-W1-lsY" secondAttribute="trailing" id="806-Bs-stL"/>
+                            <constraint firstItem="DhN-Et-oi3" firstAttribute="centerY" secondItem="bwd-kS-7QB" secondAttribute="centerY" id="944-02-J2y"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="trailing" secondItem="OaT-NZ-C0Z" secondAttribute="trailing" id="A2A-6U-YVD"/>
+                            <constraint firstItem="rFv-AA-UJm" firstAttribute="top" secondItem="DhN-Et-oi3" secondAttribute="bottom" constant="40" id="BqW-AE-DrJ"/>
+                            <constraint firstItem="2fh-bt-eHU" firstAttribute="bottom" secondItem="PSM-W1-lsY" secondAttribute="bottom" id="ChW-s9-dfu"/>
+                            <constraint firstItem="D6w-b7-JKG" firstAttribute="trailing" secondItem="bwd-kS-7QB" secondAttribute="trailing" constant="10" id="HgB-8R-Krl"/>
+                            <constraint firstItem="D6w-b7-JKG" firstAttribute="trailing" secondItem="OaT-NZ-C0Z" secondAttribute="trailing" constant="10" id="PZ4-Gv-1D0"/>
+                            <constraint firstItem="OaT-NZ-C0Z" firstAttribute="top" secondItem="bwd-kS-7QB" secondAttribute="bottom" constant="40" id="PtG-0e-TvH"/>
+                            <constraint firstItem="PSM-W1-lsY" firstAttribute="leading" secondItem="2fh-bt-eHU" secondAttribute="trailing" constant="10" id="VtI-zc-ZI2"/>
+                            <constraint firstItem="LMr-cM-Xkj" firstAttribute="leading" secondItem="D6w-b7-JKG" secondAttribute="leading" constant="10" id="Zvm-OU-vtB"/>
+                            <constraint firstItem="D6w-b7-JKG" firstAttribute="trailing" secondItem="LMr-cM-Xkj" secondAttribute="trailing" constant="10" id="dRG-Nk-04P"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="leading" secondItem="OaT-NZ-C0Z" secondAttribute="leading" id="dkr-mg-ggL"/>
+                            <constraint firstItem="D6w-b7-JKG" firstAttribute="trailing" secondItem="PSM-W1-lsY" secondAttribute="trailing" constant="10" id="hOg-nd-Nru"/>
+                            <constraint firstItem="rFv-AA-UJm" firstAttribute="centerY" secondItem="OaT-NZ-C0Z" secondAttribute="centerY" id="iQ0-0N-GDd"/>
+                            <constraint firstItem="OaT-NZ-C0Z" firstAttribute="leading" secondItem="rFv-AA-UJm" secondAttribute="trailing" constant="10" id="il5-re-p4c"/>
+                            <constraint firstItem="DhN-Et-oi3" firstAttribute="leading" secondItem="D6w-b7-JKG" secondAttribute="leading" constant="20" id="mT6-ya-oRR"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="leading" secondItem="PSM-W1-lsY" secondAttribute="leading" id="q79-bA-z8X"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="leading" secondItem="DhN-Et-oi3" secondAttribute="trailing" constant="10" id="qCT-cb-V48"/>
+                            <constraint firstItem="2fh-bt-eHU" firstAttribute="leading" secondItem="D6w-b7-JKG" secondAttribute="leading" constant="20" id="rM6-XU-ygI"/>
+                            <constraint firstItem="LMr-cM-Xkj" firstAttribute="top" secondItem="PSM-W1-lsY" secondAttribute="bottom" constant="55" id="tgo-nG-AKl"/>
+                            <constraint firstItem="DhN-Et-oi3" firstAttribute="top" secondItem="D6w-b7-JKG" secondAttribute="top" constant="114" id="vhB-97-nEW"/>
+                            <constraint firstItem="bwd-kS-7QB" firstAttribute="top" secondItem="D6w-b7-JKG" secondAttribute="top" constant="118" id="wDJ-z6-MLZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageTF" destination="OaT-NZ-C0Z" id="r0t-7Y-q4t"/>
+                        <outlet property="designationTF" destination="PSM-W1-lsY" id="dhp-Eq-hRi"/>
+                        <outlet property="nameTF" destination="bwd-kS-7QB" id="37j-5i-nKH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpx-1c-8wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2389.8550724637685" y="79.6875"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="T1r-q9-6jz">
             <objects>
@@ -168,6 +281,12 @@
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -22,7 +22,14 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Do any additional setup after loading the view.
         title = "Contact"
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(tapToAddContact))
+        
+//        let addContactBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: "tapToAddContact")
+//        self.navigationItem.leftBarButtonItem = addContactBtn
+        
+//        let btnRefresh = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(tapToAddContact))
+//            navigationItem.leftBarButtonItem = btnRefresh
+
         
         //self.tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
@@ -47,5 +54,10 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row \(indexPath) Select")
+    }
+    
+    @objc func tapToAddContact(){
+        let addContactVc = self.storyboard?.instantiateViewController(withIdentifier: "AddContactVCViewController") as! AddContactVCViewController
+        self.navigationController?.pushViewController(addContactVc, animated: true)
     }
 }

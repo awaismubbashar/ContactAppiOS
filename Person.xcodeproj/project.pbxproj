@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70CAB3F2733062D00557A77 /* AddContactVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70CAB3E2733062D00557A77 /* AddContactVCViewController.swift */; };
 		E7BE33B3271BFFBD00E9D4A9 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BE33B1271BFFBD00E9D4A9 /* ContactViewController.swift */; };
 		E7BE33BC271D4BEE00E9D4A9 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BE33BB271D4BEE00E9D4A9 /* ContactTableViewCell.swift */; };
 		E7C0428A271A98B800A3AE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C04289271A98B800A3AE63 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E70CAB3E2733062D00557A77 /* AddContactVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactVCViewController.swift; sourceTree = "<group>"; };
 		E7BE33B1271BFFBD00E9D4A9 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		E7BE33BB271D4BEE00E9D4A9 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		E7C04286271A98B800A3AE63 /* Person.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Person.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				E7C0428D271A98B800A3AE63 /* ViewController.swift */,
 				E7C0428F271A98B800A3AE63 /* Main.storyboard */,
 				E7BE33B1271BFFBD00E9D4A9 /* ContactViewController.swift */,
+				E70CAB3E2733062D00557A77 /* AddContactVCViewController.swift */,
 				E7BE33BB271D4BEE00E9D4A9 /* ContactTableViewCell.swift */,
 				E7C04292271A98B900A3AE63 /* Assets.xcassets */,
 				E7C04294271A98B900A3AE63 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70CAB3F2733062D00557A77 /* AddContactVCViewController.swift in Sources */,
 				E7C0428E271A98B800A3AE63 /* ViewController.swift in Sources */,
 				E7BE33BC271D4BEE00E9D4A9 /* ContactTableViewCell.swift in Sources */,
 				E7BE33B3271BFFBD00E9D4A9 /* ContactViewController.swift in Sources */,
@@ -445,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = Person/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.myapps.Person;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = Person/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.myapps.Person;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -480,7 +486,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = PersonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,7 +509,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = PersonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,7 +531,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = PersonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,7 +552,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A4TR52R7K;
 				INFOPLIST_FILE = PersonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
