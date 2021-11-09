@@ -11,9 +11,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    let name: [String] = ["Ali", "Asghar", "Awais", "Mubbashar", "Ameen"]
-    let age: [Int] = [22, 33, 33, 11, 21]
-    let designation: [String] = ["Teacher", "Engineer", "Wela", "Teacher", "Teacher"]
+
     
     let cellReuseIdentifier = "ContactTableViewCell"
     
@@ -24,30 +22,25 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         title = "Contact"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(tapToAddContact))
         
-//        let addContactBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: "tapToAddContact")
-//        self.navigationItem.leftBarButtonItem = addContactBtn
-        
-//        let btnRefresh = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(tapToAddContact))
-//            navigationItem.leftBarButtonItem = btnRefresh
-
-        
         //self.tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.name.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? ContactTableViewCell
-//        cell.textLabel?.text = self.animals[indexPath.row]
         
-        cell?.nameContact.text = self.name[indexPath.row]
-        cell?.ageContact.text = " \(self.age[indexPath.item]) "
-        cell?.designationContact.text = self.designation[indexPath.row]
+        // Getting
+        let getDefaults = UserDefaults.standard
+        
+        cell?.nameContact.text = getDefaults.string(forKey: "ContactName")
+        cell?.ageContact.text = getDefaults.string(forKey: "ContactAge")
+        cell?.designationContact.text = getDefaults.string(forKey: "ContactDesignation")
 
         return cell ?? UITableViewCell()
     }

@@ -25,19 +25,6 @@ class AddContactVCViewController: UIViewController {
             defaults.set(age, forKey: "ContactAge")
             defaults.set(designation, forKey: "ContactDesignation")
 
-            // Getting
-            let getDefaults = UserDefaults.standard
-            if let stringOne = getDefaults.string(forKey: "ContactName") {
-                print(stringOne)
-            }
-            if let stringTwo = getDefaults.string(forKey: "ContactAge") {
-                print(stringTwo)
-            }
-            if let stringThree = getDefaults.string(forKey: "ContactDesignation") {
-                print(stringThree)
-            }
-            
-            
         }
         else{
             print("Please Fill All the Fields")

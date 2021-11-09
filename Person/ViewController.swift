@@ -36,6 +36,8 @@ class ViewController: UIViewController {
     
     @IBAction func gridButtonAction(_ sender: Any) {
         print("Grid button pressed")
+        let collectionContactVc = self.storyboard?.instantiateViewController(withIdentifier: "CollectionContactVC") as! CollectionContactVC
+        self.navigationController?.pushViewController(collectionContactVc, animated: true)
     }
 }
 
