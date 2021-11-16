@@ -1,10 +1,3 @@
-//
-//  CollectionContact.swift
-//  Person
-//
-//  Created by Awais on 09/11/2021.
-//
-
 import UIKit
 
 private let reuseIdentifier = "ContactCollectionViewCell"
@@ -15,9 +8,10 @@ class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Register cell classes
-        self.collectionV.register(ContactCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // Only register if cell is not in cellectionview
+        //self.collectionV.register(ContactCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         title = "Contact"
@@ -25,28 +19,36 @@ class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollect
         
         collectionV.delegate = self
         collectionV.dataSource = self
-    }
+}
 
 
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 4
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-        cell.backgroundColor = .black
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ContactCollectionViewCell
+        
+        let getDefaults = UserDefaults.standard
+        
+        cell?.contactName.text = getDefaults.string(forKey: "ContactName")
+        cell?.contactAge.text = getDefaults.string(forKey: "ContactAge")
+        cell?.contactDesignation.text = getDefaults.string(forKey: "ContactDesignation")
+        
+        cell?.layer.borderColor = UIColor.black.cgColor
+        cell?.layer.borderWidth = 1
+        cell?.layer.cornerRadius = 10
+        
+        return cell ?? UICollectionViewCell()
     }
     
     @objc func tapToAddContact(){

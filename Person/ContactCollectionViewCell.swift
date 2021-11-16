@@ -9,4 +9,9 @@ import UIKit
 
 class ContactCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var contactAge: UILabel!
+    @IBOutlet weak var contactName: UILabel!
+    @IBOutlet weak var contactDesignation: UILabel!
+    @IBOutlet weak var contactImage: UIImageView!
+    
 }
