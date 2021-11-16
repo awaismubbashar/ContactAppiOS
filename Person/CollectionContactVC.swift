@@ -3,8 +3,9 @@ import UIKit
 private let reuseIdentifier = "ContactCollectionViewCell"
 
 class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var collectionV: UICollectionView!
+    var contactsData: [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,30 +20,36 @@ class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollect
         
         collectionV.delegate = self
         collectionV.dataSource = self
-}
+    }
 
 
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        return contactsData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ContactCollectionViewCell
         
-        let getDefaults = UserDefaults.standard
+        let contact = contactsData[indexPath.item]
         
-        cell?.contactName.text = getDefaults.string(forKey: "ContactName")
-        cell?.contactAge.text = getDefaults.string(forKey: "ContactAge")
-        cell?.contactDesignation.text = getDefaults.string(forKey: "ContactDesignation")
+        cell?.contactName.text = contact.name
+        cell?.contactAge.text = contact.age
+        cell?.contactDesignation.text = contact.designation
+        
+//        let getDefaults = UserDefaults.standard
+//
+//        cell?.contactName.text = getDefaults.string(forKey: "ContactName")
+//        cell?.contactAge.text = getDefaults.string(forKey: "ContactAge")
+//        cell?.contactDesignation.text = getDefaults.string(forKey: "ContactDesignation")
         
         cell?.layer.borderColor = UIColor.black.cgColor
         cell?.layer.borderWidth = 1
@@ -53,6 +60,7 @@ class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollect
     
     @objc func tapToAddContact(){
         let addContactVc = self.storyboard?.instantiateViewController(withIdentifier: "AddContactVCViewController") as! AddContactVCViewController
+        addContactVc.contactDelegate = self
         self.navigationController?.pushViewController(addContactVc, animated: true)
     }
 
@@ -87,4 +95,11 @@ class CollectionContactVC: UIViewController, UICollectionViewDelegate, UICollect
     }
     */
 
+}
+
+extension CollectionContactVC: AddContactVCViewControllerDelegate {
+    func contactData(data: Contact) {
+        contactsData.append(data)
+        collectionV.reloadData()
+    }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AddContactVCViewControllerDelegate {
-    func contactData(data: String)
+    func contactData(data: Contact)
 }
 
 class AddContactVCViewController: UIViewController {
@@ -23,7 +23,9 @@ class AddContactVCViewController: UIViewController {
         let age: String = ageTF.text ?? ""
         let designation: String = designationTF.text ?? ""
         
-        contactDelegate?.contactData(data: name)
+        let contact = Contact(name: name, age: age, designation: designation)
+        
+        contactDelegate?.contactData(data: contact)
         self.navigationController?.popViewController(animated: true)
 
 //

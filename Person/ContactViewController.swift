@@ -13,7 +13,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let cellReuseIdentifier = "ContactTableViewCell"
     
-    var contactsData: [String] = []
+    var contactsData: [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +42,10 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        cell?.ageContact.text = getDefaults.string(forKey: "ContactAge")
 //        cell?.designationContact.text = getDefaults.string(forKey: "ContactDesignation")
 
-        let data = contactsData[indexPath.row]
-        cell?.nameContact.text = data
+        let contact = contactsData[indexPath.row]
+        cell?.nameContact.text = contact.name
+        cell?.ageContact.text = contact.age
+        cell?.designationContact.text = contact.designation
         
         return cell ?? UITableViewCell()
     }
@@ -61,7 +63,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 }
 
 extension ContactViewController: AddContactVCViewControllerDelegate {
-    func contactData(data: String) {
+    func contactData(data: Contact) {
         print(data)
         contactsData.append(data)
         tableView.reloadData()
